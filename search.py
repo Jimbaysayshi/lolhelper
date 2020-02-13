@@ -10,7 +10,7 @@ from pywinauto.timings import TimeoutError
 from pywinauto.application import Application
 from selenium.common.exceptions import WebDriverException, NoSuchWindowException, ElementClickInterceptedException
 
-choose_champ = 'choosechamp.PNG'
+choose_champ = ['choosechamp.PNG', 'banphase.png']
 messages = {'add': 'Start by adding a summoner \n',
             'start': 'Seems like League of legends is not active, start it and try again \n',
             'not': 'Not in championselect, try again \n'}
@@ -37,8 +37,9 @@ class SearchHelper(object):
 
     def is_champselect(self, window_pos):
         """Check if user is in championselection, pyautogui.locateOnScreen uses relative position of league of legends window"""
-        select = pyautogui.locateOnScreen(
-            choose_champ, region=window_pos)
+        for pic in choose_champ:
+            select = pyautogui.locateOnScreen(
+                pic, region=window_pos)
         if select == None:
             return False
         return True
