@@ -19,7 +19,7 @@ pywinauto==0.6.8
 selenium==3.141.0
 six==1.14.0
 typed-ast==1.4.1
-urllib3==1.25.8
+urllib3==1.26.5
 win32core==221.36
 win32gui==221.6
 wrapt==1.11.2
